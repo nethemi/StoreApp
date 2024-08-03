@@ -119,6 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\CartVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
@@ -184,6 +185,36 @@
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <EmbeddedResource Include="Images\alenka.png" />
+    <EmbeddedResource Include="Images\alpenGold.png" />
+    <EmbeddedResource Include="Images\camaySoap.png" />
+    <EmbeddedResource Include="Images\Chernogolovka.png" />
+    <EmbeddedResource Include="Images\darnic.png" />
+    <EmbeddedResource Include="Images\DobrApple.png" />
+    <EmbeddedResource Include="Images\doshirak.png" />
+    <EmbeddedResource Include="Images\heinz.png" />
+    <EmbeddedResource Include="Images\ikraKabach.png" />
+    <EmbeddedResource Include="Images\j7Orange.png" />
+    <EmbeddedResource Include="Images\jubelian.png" />
+    <EmbeddedResource Include="Images\krasnaya_ikra.png" />
+    <EmbeddedResource Include="Images\krutFrut.png" />
+    <EmbeddedResource Include="Images\largeGel.png" />
+    <EmbeddedResource Include="Images\largeShampoo.png" />
+    <EmbeddedResource Include="Images\maionez.png" />
+    <EmbeddedResource Include="Images\mustard.png" />
+    <EmbeddedResource Include="Images\ollinShampoo.png" />
+    <EmbeddedResource Include="Images\oreo.png" />
+    <EmbeddedResource Include="Images\palmoliveGel.png" />
+    <EmbeddedResource Include="Images\pickledCucumber.png" />
+    <EmbeddedResource Include="Images\ramen.png" />
+    <EmbeddedResource Include="Images\rizhski.png" />
+    <EmbeddedResource Include="Images\sirokRostagr.png" />
+    <EmbeddedResource Include="Images\sirokSvit.png" />
+    <EmbeddedResource Include="Images\sponge.png" />
+    <EmbeddedResource Include="Images\trashBag.png" />
+    <EmbeddedResource Include="Images\tryapka.png" />
+    <EmbeddedResource Include="Images\wetWipe.png" />
+    <EmbeddedResource Include="Images\wipe.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -217,8 +248,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Model\" />
+    <None Include="Model\Products.json" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
