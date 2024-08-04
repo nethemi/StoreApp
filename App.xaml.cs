@@ -67,7 +67,7 @@ namespace StoreApp
                     // Если стек навигации не восстанавливается для перехода к первой странице,
                     // настройка новой страницы путем передачи необходимой информации в качестве параметра
                     // навигации
-                    rootFrame.Navigate(typeof(View.NavigationView), e.Arguments);
+                    rootFrame.Navigate(typeof(MainView), e.Arguments);
                 }
                 // Обеспечение активности текущего окна
                 Window.Current.Activate();
