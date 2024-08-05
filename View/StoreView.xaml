@@ -10,8 +10,29 @@
     Background="#B9E4C9">
 
     <Grid>
-
-        <TextBlock  Text="hello"/>
-
+        <Grid Background="White" Margin="40" CornerRadius="25">
+            <GridView SelectionMode="None" Margin="0 45" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollMode="Disabled"
+                      ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="250" Margin="5">
+                            <StackPanel Orientation="Vertical">
+                                <Image Height="250" Width="200"/>
+                                <TextBlock Text="name" Style="{StaticResource productName}"/>
+                                <TextBlock Text="price" Style="{StaticResource productPrice}"/>
+                                <Button Content="Добавить в корзину" Style="{StaticResource addProduct}"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+                <GridView.Items>
+                    <TextBlock/>
+                    <TextBlock/>
+                    <TextBlock/>
+                    <TextBlock/>
+                    <TextBlock/>
+                </GridView.Items>
+            </GridView>
+        </Grid>
     </Grid>
 </Page>

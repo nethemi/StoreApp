@@ -11,8 +11,8 @@
     xmlns:vm="using:StoreApp.ViewModel"
     mc:Ignorable="d"
     Background="#B9E4C9"
-    MinWidth="1000"
-    MinHeight="1000">
+    MinHeight="1000"
+    MinWidth="1000">
     
     <Page.Resources>
 
@@ -31,7 +31,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="NavigationViewItem">
-                        <Grid x:Name="LayoutRoot" Background="{TemplateBinding Background}" Control.IsTemplateFocusTarget="True" CornerRadius="10 10 0 0">
+                        <Grid x:Name="LayoutRoot" Background="{TemplateBinding Background}" Control.IsTemplateFocusTarget="True" CornerRadius="20 20 0 0">
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="PointerStates">
                                     <VisualState x:Name="Normal"/>
@@ -57,6 +57,7 @@
                                             <Setter Target="PointerRectangle.Fill" Value="{ThemeResource NavigationViewItemBackgroundSelected}"/>
                                             <Setter Target="Icon.Foreground" Value="#356859"/>
                                             <Setter Target="Text.Foreground" Value="#356859"/>
+                                            <Setter Target="Text.FontWeight" Value="Bold"/>
                                         </VisualState.Setters>
                                     </VisualState>
                                     <VisualState x:Name="PointerOverSelected">
@@ -130,6 +131,10 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
             </NavigationView.PaneFooter>
+
+            <NavigationView.Header>
+                <TextBlock/>
+            </NavigationView.Header>
 
             <NavigationView.Content>
                 <ScrollViewer>
