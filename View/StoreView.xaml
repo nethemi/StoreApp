@@ -7,32 +7,23 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="#B9E4C9">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid Background="White" Margin="40" CornerRadius="25">
-            <GridView SelectionMode="None" Margin="0 45" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollMode="Disabled"
-                      ScrollViewer.VerticalScrollBarVisibility="Visible">
-                <GridView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Width="250" Margin="5">
-                            <StackPanel Orientation="Vertical">
-                                <Image Height="250" Width="200"/>
-                                <TextBlock Text="name" Style="{StaticResource productName}"/>
-                                <TextBlock Text="price" Style="{StaticResource productPrice}"/>
-                                <Button Content="Добавить в корзину" Style="{StaticResource addProduct}"/>
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-                <GridView.Items>
-                    <TextBlock/>
-                    <TextBlock/>
-                    <TextBlock/>
-                    <TextBlock/>
-                    <TextBlock/>
-                </GridView.Items>
-            </GridView>
-        </Grid>
+        <GridView SelectionMode="None"  HorizontalAlignment="Center" ScrollViewer.HorizontalScrollMode="Disabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="250" Margin="5">
+                        <StackPanel Orientation="Vertical">
+                            <Image Height="250" Width="200"/>
+                            <TextBlock Text="name" Style="{StaticResource productName}"/>
+                            <TextBlock Text="price" Style="{StaticResource productPrice}"/>
+                            <Button Content="Добавить в корзину" Style="{StaticResource addProduct}"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
     </Grid>
 </Page>

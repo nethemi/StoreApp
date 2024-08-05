@@ -2,6 +2,7 @@
 using StoreApp.View;
 using System;
 using System.Windows.Input;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 
@@ -29,7 +30,6 @@ namespace StoreApp.ViewModel
                 {
                     case "shop": frame.Navigate(typeof(StoreView)); break;
                     case "cart": frame.Navigate(typeof(CartView)); break;
-                    case "exit": App.Current.Exit(); break;
                 }
             }
             else frame.Navigate(typeof(StoreView));

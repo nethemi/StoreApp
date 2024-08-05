@@ -112,7 +112,7 @@
     </Page.Resources>
     
     <Grid>
-        <NavigationView  PaneDisplayMode="Top"
+        <NavigationView  PaneDisplayMode="Top" 
                          IsBackButtonVisible="Collapsed" IsSettingsVisible="False">
 
             <NavigationView.MenuItems>
@@ -124,22 +124,8 @@
                 </NavigationViewItem>
             </NavigationView.MenuItems>
 
-            <NavigationView.PaneFooter>
-                <NavigationViewItem Content="Выйти" Tag="exit">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xF83D;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-            </NavigationView.PaneFooter>
-
-            <NavigationView.Header>
-                <TextBlock/>
-            </NavigationView.Header>
-
             <NavigationView.Content>
-                <ScrollViewer>
-                    <Frame Content="{x:Bind mainVM.frame}"/>
-                </ScrollViewer>
+                <Frame Content="{x:Bind mainVM.frame}" Margin="50" Background="White" CornerRadius="25"/>
             </NavigationView.Content>
 
             <inter:Interaction.Behaviors>
