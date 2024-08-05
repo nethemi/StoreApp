@@ -19,11 +19,14 @@
                             <Image Height="250" Width="200"/>
                             <TextBlock Text="name" Style="{StaticResource productName}"/>
                             <TextBlock Text="price" Style="{StaticResource productPrice}"/>
-                            <Button Content="Добавить в корзину" Style="{StaticResource addProduct}"/>
+                            <Button Content="Добавить в корзину" Style="{StaticResource productBtn}"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
+            <GridView.Items>
+                <TextBlock/>
+            </GridView.Items>
         </GridView>
     </Grid>
 </Page>
