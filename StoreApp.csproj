@@ -119,7 +119,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Cart.cs" />
+    <Compile Include="Model\DataOperation.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductInCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
     <Compile Include="ViewModel\CartVM.cs" />
@@ -240,6 +243,12 @@
     <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
       <Version>2.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.Text.Json">
+      <Version>8.0.4</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\CartView.xaml">
@@ -257,7 +266,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Model\Carts.json" />
     <None Include="Model\Products.json" />
+    <None Include="Model\ProductsInCarts.json" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

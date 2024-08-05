@@ -12,8 +12,7 @@
     mc:Ignorable="d"
     Background="#B9E4C9"
     MinHeight="1000"
-    MinWidth="1000"
-    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+    MinWidth="1000">
     
     
     <Page.Resources>

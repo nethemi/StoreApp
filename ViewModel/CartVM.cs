@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StoreApp.ViewModel
 {
-    public class CartVM
+    public class CartVM : BaseVM
     {
     }
 }
