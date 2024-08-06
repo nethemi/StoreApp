@@ -180,12 +180,6 @@
     "price": 219.99,
     "image": "tryapka.png"
   } ],
-  "Carts": [
-      {
-        "id": 1,
-        "totalcost": 0
-      }
-  ],
   "ProductsInCarts":[
   ]
 }

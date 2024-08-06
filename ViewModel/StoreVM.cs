@@ -1,13 +1,33 @@
-﻿using StoreApp.Model;
+﻿using CommunityToolkit.Mvvm.Input;
+using StoreApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Windows.Input;
+using Windows.UI.Xaml.Controls;
 
 namespace StoreApp.ViewModel
 {
     public class StoreVM : BaseVM
     {
+        private string message;
+        public string Message
+        {
+            get => message;
+            set => SetProperty(ref message, value);
+        }
+
         public List<Product> products {  get; }
+
+        private ICommand _AddProductCommand;
+        public ICommand AddProductCommand => this._AddProductCommand ?? (this._AddProductCommand = new RelayCommand<Product>(ExecuteAddProductCommand));
+
+        private void ExecuteAddProductCommand(Product product)
+        {
+           
+
+            
+        }
 
         public StoreVM()
         {
@@ -25,11 +45,11 @@ namespace StoreApp.ViewModel
                 foreach (var item in list)
                 {
                     products.Add(item);
-                    Debug.WriteLine(item);
                 }
             } 
-            catch { 
-            
+            catch 
+            {
+                Message = "Невозможно загрузить товары :(";
             }
             
         }
