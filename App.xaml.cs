@@ -68,7 +68,8 @@ namespace StoreApp
                 }
             }
 
-            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1000, 800));
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(2560, 1600));
+            ApplicationViewScaling.TrySetDisableLayoutScaling(false);
 
             Frame rootFrame = Window.Current.Content as Frame;
 
