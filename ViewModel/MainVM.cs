@@ -1,10 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using StoreApp.View;
-using System;
 using System.Windows.Input;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Input;
 
 namespace StoreApp.ViewModel
 {

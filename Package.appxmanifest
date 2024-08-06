@@ -47,7 +47,6 @@
   </Applications>
 
 	<Capabilities>
-		<Capability Name="internetClient" />
 		<rescap:Capability Name="confirmAppClose"/>
 	</Capabilities>
 </Package>

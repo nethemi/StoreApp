@@ -8,6 +8,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -38,8 +39,28 @@ namespace StoreApp
         /// например, если приложение запускается для открытия конкретного файла.
         /// </summary>
         /// <param name="e">Сведения о запросе и обработке запуска.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
+            if (await ApplicationData.Current.LocalFolder.TryGetItemAsync("Data.json") == null)
+            {
+                StorageFile data = await Package.Current.InstalledLocation.GetFileAsync("Data.json");
+                await data.CopyAsync(ApplicationData.Current.LocalFolder);
+            }
+
+            if (await ApplicationData.Current.LocalFolder.TryGetItemAsync("Images") == null)
+            {
+                StorageFolder imgFolder = await Package.Current.InstalledLocation.GetFolderAsync("Images");
+                var imgList = await imgFolder.GetFilesAsync();
+                foreach(var img in imgList)
+                {
+                    if (await ApplicationData.Current.LocalFolder.TryGetItemAsync(img.Name) == null)
+                    {
+                        StorageFile imgFile = img;
+                        await imgFile.CopyAsync(ApplicationData.Current.LocalFolder);
+                    }
+                }
+            }
+
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Не повторяйте инициализацию приложения, если в окне уже имеется содержимое,

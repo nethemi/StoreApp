@@ -7,26 +7,24 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    VerticalAlignment="Top">
 
-    <Grid>
-        <GridView SelectionMode="None"  HorizontalAlignment="Center" ScrollViewer.HorizontalScrollMode="Disabled"
-                  ScrollViewer.VerticalScrollBarVisibility="Visible">
+    <Grid VerticalAlignment="Top">
+        <GridView SelectionMode="None"  HorizontalAlignment="Center" ScrollViewer.HorizontalScrollMode="Disabled" VerticalAlignment="Top"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{x:Bind storeVM.products}" Height="700">
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Width="250" Margin="5">
+                    <Grid Width="250" Margin="10">
                         <StackPanel Orientation="Vertical">
-                            <Image Height="250" Width="200"/>
-                            <TextBlock Text="name" Style="{StaticResource productName}"/>
-                            <TextBlock Text="price" Style="{StaticResource productPrice}"/>
+                            <Image Height="250" Width="200" Source="{Binding ProductImage}"/>
+                            <TextBlock Text="{Binding ProductName}" Style="{StaticResource productName}" TextWrapping="WrapWholeWords" Height="60"/>
+                            <TextBlock Text="{Binding ProductPrice}" Style="{StaticResource productPrice}"/>
                             <Button Content="Добавить в корзину" Style="{StaticResource productBtn}"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
-            <GridView.Items>
-                <TextBlock/>
-            </GridView.Items>
         </GridView>
     </Grid>
 </Page>

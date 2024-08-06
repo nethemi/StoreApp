@@ -1,12 +1,7 @@
 using StoreApp.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.ServiceModel.Channels;
-using Windows.System;
 using Windows.UI.Core.Preview;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace StoreApp.View

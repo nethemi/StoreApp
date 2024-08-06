@@ -1,4 +1,9 @@
-﻿using System.Text.Json.Serialization;
+﻿using StoreApp.ViewModel;
+using System;
+using System.IO;
+using System.Text.Json.Serialization;
+using Windows.Storage;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace StoreApp.Model
 {
@@ -11,6 +16,14 @@ namespace StoreApp.Model
         [JsonPropertyName("price")]
         public string ProductPrice { get; set; }
         [JsonPropertyName("image")]
-        public string ProductImage { get; set; }
+        public BitmapImage ProductImage { get; set; }
+
+        public Product(int id, string name, string price, string image)
+        {
+            ProductId = id;
+            ProductName = name;
+            ProductPrice = price;
+            ProductImage = new BitmapImage(new Uri(Path.Combine(ApplicationData.Current.LocalFolder.Path, image)));
+        }
     }
 }

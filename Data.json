@@ -1,9 +1,10 @@
-﻿[
+﻿{ 
+    "Products": [
   {
     "id": 1,
     "name": "Молочный шоколад Алёнка 90г",
     "price": 110.99,
-    "image ": "alenka.png"
+    "image": "alenka.png"
   },
   {
     "id": 2,
@@ -27,19 +28,19 @@
     "id": 5,
     "name": "Хлеб Дарницкий",
     "price": 60.99,
-    "image ": "darnik.png"
+    "image": "darnic.png"
   },
   {
     "id": 6,
     "name": "Сок яблочный Добрый 1л",
     "price": 149.99,
-    "image ": "DobrApple.png"
+    "image": "DobrApple.png"
   },
   {
     "id": 7,
     "name": "Лапша Доширак со вкусом курицы 90г",
     "price": 45.29,
-    "image ": "doshirak.png"
+    "image": "doshirak.png"
   },
   {
     "id": 8,
@@ -63,19 +64,19 @@
     "id": 11,
     "name": "Печенье Юбилейное Злаковое",
     "price": 89.99,
-    "image ": "jubelian.png"
+    "image": "jubelian.png"
   },
   {
     "id": 12,
     "name": "Икра лососевая Хавиар",
     "price": 1119.99,
-    "image ": "krasnaya_ikra.png"
+    "image": "krasnaya_ikra.png"
   },
   {
     "id": 13,
     "name": "Мармелад Krut Frut",
     "price": 29.5,
-    "image ": "krutFrut.png"
+    "image": "krutFrut.png"
   },
   {
     "id": 14,
@@ -99,19 +100,19 @@
     "id": 17,
     "name": "Горчица русская Щедрый край",
     "price": 60.99,
-    "image ": "mustard.png"
+    "image": "mustard.png"
   },
   {
     "id": 18,
     "name": "Шампунь Ollin для окрашенных волос",
     "price": 519.99,
-    "image ": "ollinShampoo.png"
+    "image": "ollinShampoo.png"
   },
   {
     "id": 19,
     "name": "Печенье Oreo",
     "price": 79.99,
-    "image ": "oreo.png"
+    "image": "oreo.png"
   },
   {
     "id": 20,
@@ -135,19 +136,19 @@
     "id": 23,
     "name": "Лапша Чан Рамен",
     "price": 80.99,
-    "image ": "ramen.png"
+    "image": "ramen.png"
   },
   {
     "id": 24,
     "name": "Хлеб Рижский в нарезке",
     "price": 49.99,
-    "image ": "rizhski.png"
+    "image": "rizhski.png"
   },
   {
     "id": 25,
     "name": "Сырок Ростагрокомплекс",
     "price": 49.99,
-    "image ": "sirokRostagr.png"
+    "image": "sirokRostagr.png"
   },
   {
     "id": 26,
@@ -171,12 +172,20 @@
     "id": 29,
     "name": "Мешок мусорный 80x60 60л",
     "price": 60.99,
-    "image ": "trashBag.png"
+    "image": "trashBag.png"
   },
   {
     "id": 30,
     "name": "Super Тряпка Unicum 100шт",
     "price": 219.99,
-    "image ": "tryapka.png"
-  }
-]
+    "image": "tryapka.png"
+  } ],
+  "Carts": [
+      {
+        "id": 1,
+        "totalcost": 0
+      }
+  ],
+  "ProductsInCarts":[
+  ]
+}

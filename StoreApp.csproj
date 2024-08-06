@@ -189,36 +189,36 @@
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <EmbeddedResource Include="Images\alenka.png" />
-    <EmbeddedResource Include="Images\alpenGold.png" />
-    <EmbeddedResource Include="Images\camaySoap.png" />
-    <EmbeddedResource Include="Images\Chernogolovka.png" />
-    <EmbeddedResource Include="Images\darnic.png" />
-    <EmbeddedResource Include="Images\DobrApple.png" />
-    <EmbeddedResource Include="Images\doshirak.png" />
-    <EmbeddedResource Include="Images\heinz.png" />
-    <EmbeddedResource Include="Images\ikraKabach.png" />
-    <EmbeddedResource Include="Images\j7Orange.png" />
-    <EmbeddedResource Include="Images\jubelian.png" />
-    <EmbeddedResource Include="Images\krasnaya_ikra.png" />
-    <EmbeddedResource Include="Images\krutFrut.png" />
-    <EmbeddedResource Include="Images\largeGel.png" />
-    <EmbeddedResource Include="Images\largeShampoo.png" />
-    <EmbeddedResource Include="Images\maionez.png" />
-    <EmbeddedResource Include="Images\mustard.png" />
-    <EmbeddedResource Include="Images\ollinShampoo.png" />
-    <EmbeddedResource Include="Images\oreo.png" />
-    <EmbeddedResource Include="Images\palmoliveGel.png" />
-    <EmbeddedResource Include="Images\pickledCucumber.png" />
-    <EmbeddedResource Include="Images\ramen.png" />
-    <EmbeddedResource Include="Images\rizhski.png" />
-    <EmbeddedResource Include="Images\sirokRostagr.png" />
-    <EmbeddedResource Include="Images\sirokSvit.png" />
-    <EmbeddedResource Include="Images\sponge.png" />
-    <EmbeddedResource Include="Images\trashBag.png" />
-    <EmbeddedResource Include="Images\tryapka.png" />
-    <EmbeddedResource Include="Images\wetWipe.png" />
-    <EmbeddedResource Include="Images\wipe.png" />
+    <Content Include="Images\alenka.png" />
+    <Content Include="Images\alpenGold.png" />
+    <Content Include="Images\camaySoap.png" />
+    <Content Include="Images\Chernogolovka.png" />
+    <Content Include="Images\darnic.png" />
+    <Content Include="Images\DobrApple.png" />
+    <Content Include="Images\doshirak.png" />
+    <Content Include="Images\heinz.png" />
+    <Content Include="Images\ikraKabach.png" />
+    <Content Include="Images\j7Orange.png" />
+    <Content Include="Images\jubelian.png" />
+    <Content Include="Images\krasnaya_ikra.png" />
+    <Content Include="Images\krutFrut.png" />
+    <Content Include="Images\largeGel.png" />
+    <Content Include="Images\largeShampoo.png" />
+    <Content Include="Images\maionez.png" />
+    <Content Include="Images\mustard.png" />
+    <Content Include="Images\ollinShampoo.png" />
+    <Content Include="Images\oreo.png" />
+    <Content Include="Images\palmoliveGel.png" />
+    <Content Include="Images\pickledCucumber.png" />
+    <Content Include="Images\ramen.png" />
+    <Content Include="Images\rizhski.png" />
+    <Content Include="Images\sirokRostagr.png" />
+    <Content Include="Images\sirokSvit.png" />
+    <Content Include="Images\sponge.png" />
+    <Content Include="Images\trashBag.png" />
+    <Content Include="Images\tryapka.png" />
+    <Content Include="Images\wetWipe.png" />
+    <Content Include="Images\wipe.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -266,9 +266,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Model\Carts.json" />
-    <None Include="Model\Products.json" />
-    <None Include="Model\ProductsInCarts.json" />
+    <Content Include="Data.json" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
