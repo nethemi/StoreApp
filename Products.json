@@ -1,5 +1,4 @@
-﻿{ 
-    "Products": [
+﻿ [
   {
     "id": 1,
     "name": "Молочный шоколад Алёнка 90г",
@@ -179,7 +178,5 @@
     "name": "Super Тряпка Unicum 100шт",
     "price": 219.99,
     "image": "tryapka.png"
-  } ],
-  "ProductsInCarts":[
-  ]
-}
+  } 
+    ]

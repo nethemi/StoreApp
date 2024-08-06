@@ -1,4 +1,8 @@
-﻿using System.Text.Json.Serialization;
+﻿using System;
+using System.IO;
+using System.Text.Json.Serialization;
+using Windows.Storage;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace StoreApp.Model
 {
@@ -6,17 +10,23 @@ namespace StoreApp.Model
     {
         [JsonPropertyName("id")]
         public int Id { get; set; }
-        [JsonPropertyName("productFk")]
+        [JsonPropertyName("product_id")]
         public int ProductFK { get; set; }
+        [JsonPropertyName("name")]
+        public string ProductName { get; set; }
+        [JsonPropertyName("image")]
+        public BitmapImage ProductImage { get; set; }
         [JsonPropertyName("count")]
         public int ProductCount { get; set; }
         [JsonPropertyName("price")]
-        public string TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
 
-        public ProductInCart(int id, int productId, int count, string price)
+        public ProductInCart(int id, int fk, string productName, BitmapImage image, int count, double price)
         {
             Id = id;
-            ProductFK = productId;
+            ProductFK = fk;
+            ProductName = productName;
+            ProductImage = image;
             ProductCount = count;
             TotalPrice = price;
         }

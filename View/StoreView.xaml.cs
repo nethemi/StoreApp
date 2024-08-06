@@ -9,7 +9,7 @@ namespace StoreApp.View
         public StoreView()
         {
             this.InitializeComponent();
-            storeVM = new StoreVM();
+            DataContext = storeVM = new StoreVM();
         }
     }
 }

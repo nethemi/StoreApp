@@ -9,6 +9,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -41,9 +42,15 @@ namespace StoreApp
         /// <param name="e">Сведения о запросе и обработке запуска.</param>
         protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
-            if (await ApplicationData.Current.LocalFolder.TryGetItemAsync("Data.json") == null)
+            if (await ApplicationData.Current.LocalFolder.TryGetItemAsync("Products.json") == null)
             {
-                StorageFile data = await Package.Current.InstalledLocation.GetFileAsync("Data.json");
+                StorageFile data = await Package.Current.InstalledLocation.GetFileAsync("Products.json");
+                await data.CopyAsync(ApplicationData.Current.LocalFolder);
+            }
+
+            if (await ApplicationData.Current.LocalFolder.TryGetItemAsync("ProductsInCarts.json") == null)
+            {
+                StorageFile data = await Package.Current.InstalledLocation.GetFileAsync("ProductsInCarts.json");
                 await data.CopyAsync(ApplicationData.Current.LocalFolder);
             }
 
@@ -60,6 +67,8 @@ namespace StoreApp
                     }
                 }
             }
+
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1000, 800));
 
             Frame rootFrame = Window.Current.Content as Frame;
 

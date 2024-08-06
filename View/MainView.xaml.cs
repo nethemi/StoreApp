@@ -13,7 +13,6 @@ namespace StoreApp.View
         {
             this.InitializeComponent();
             mainVM = new MainVM();
-
             SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += CloseHandle;
         }
 

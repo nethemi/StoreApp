@@ -14,11 +14,11 @@ namespace StoreApp.Model
         [JsonPropertyName("name")]
         public string ProductName { get; set; }
         [JsonPropertyName("price")]
-        public string ProductPrice { get; set; }
+        public double ProductPrice { get; set; }
         [JsonPropertyName("image")]
         public BitmapImage ProductImage { get; set; }
 
-        public Product(int id, string name, string price, string image)
+        public Product(int id, string name, double price, string image)
         {
             ProductId = id;
             ProductName = name;

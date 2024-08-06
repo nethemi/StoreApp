@@ -9,7 +9,7 @@ namespace StoreApp.View
         public CartView()
         {
             this.InitializeComponent();
-            cartVM = new CartVM();
+            DataContext = cartVM = new CartVM();
         }
     }
 }

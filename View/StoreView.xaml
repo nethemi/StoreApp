@@ -4,7 +4,6 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:StoreApp.View"
-    xmlns:model="using:StoreApp.Model"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:inter="using:Microsoft.Xaml.Interactivity"
@@ -14,8 +13,8 @@
     VerticalAlignment="Top">
 
     <Grid VerticalAlignment="Top">
-        <TextBlock Text="{}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource productName}"/>
-        <GridView SelectionMode="None"  HorizontalAlignment="Center" ScrollViewer.HorizontalScrollMode="Disabled" VerticalAlignment="Top"
+        <TextBlock Text="{x:Bind storeVM.Message}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource productName}"/>
+        <GridView x:Name="productGrid" SelectionMode="None"  HorizontalAlignment="Center" ScrollViewer.HorizontalScrollMode="Disabled" VerticalAlignment="Top"
                   ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{x:Bind storeVM.products}" Height="700">
             <GridView.ItemTemplate>
                 <DataTemplate>
@@ -24,19 +23,13 @@
                             <Image Height="250" Width="200" Source="{Binding ProductImage}"/>
                             <TextBlock Text="{Binding ProductName}" Style="{StaticResource productName}" TextWrapping="WrapWholeWords" Height="60"/>
                             <TextBlock Text="{Binding ProductPrice}" Style="{StaticResource productPrice}"/>
-                            <Button Content="Добавить в корзину" Style="{StaticResource productBtn}" CommandParameter="{Binding model.Product}"/>
+                            <Button Content="Добавить в корзину" Style="{StaticResource productBtn}" CommandParameter="{Binding}" Command="{Binding ElementName=productGrid,Path=DataContext.AddProductCommand}"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
         
-        <inter:Interaction.Behaviors>
-            <core:EventTriggerBehavior EventName="Click">
-                <core:EventTriggerBehavior.Actions>
-                    <core:InvokeCommandAction Command="{x:Bind storeVM.AddProductCommand}"/>
-                </core:EventTriggerBehavior.Actions>
-            </core:EventTriggerBehavior>
-        </inter:Interaction.Behaviors>
+        
     </Grid>
 </Page>

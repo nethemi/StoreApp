@@ -10,13 +10,6 @@ namespace StoreApp.ViewModel
 {
     public class BaseVM : INotifyPropertyChanged
     {
-        bool isBusy = false;
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
-        }
-
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
             Action onChanged = null)

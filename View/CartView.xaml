@@ -7,69 +7,57 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    VerticalAlignment="Top">
 
-    <Grid>
+    <Grid VerticalAlignment="Top" Margin="10" CornerRadius="25">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="0">
-            <TextBlock Text="Сортировать" Style="{StaticResource productName}" Margin="10" FontWeight="SemiBold"/>
-            <RadioButton Style="{StaticResource RadioButtonStyle}" GroupName="sorting" Content="По названию" />
-            <RadioButton GroupName="sorting" Content="По стоимости" Style="{StaticResource RadioButtonStyle}"/>
-        </StackPanel>
+        <Grid Grid.Row="0" BorderBrush="#356859" BorderThickness="2" CornerRadius="25" x:DefaultBindMode="TwoWay">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-        <Grid Margin="10" CornerRadius="25" Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Grid Grid.Row="0" BorderBrush="#356859" BorderThickness="2" CornerRadius="25">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="30">
-                    <TextBlock Text="Кол-во продуктов: " Style="{StaticResource productName}" FontSize="24"/>
-                    <TextBlock Text="Count" Style="{StaticResource productName}" FontWeight="Bold" FontSize="24" Margin="20 0"/>
-                </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="30">
+                <TextBlock Text="Кол-во продуктов: " Style="{StaticResource productName}" FontSize="24"/>
+                <TextBlock Text="{x:Bind cartVM.Count}" Style="{StaticResource productName}" FontWeight="Bold" FontSize="24" Margin="20 0"/>
+            </StackPanel>
 
 
-                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Margin="30">
-                    <TextBlock Text="ИТОГО:" Style="{StaticResource productName}" FontSize="24"/>
-                    <TextBlock Text="totalPrice" Style="{StaticResource productPrice}" Margin="20 0 5 0"/>
-                    <TextBlock Text="рублей" Style="{StaticResource productName}" FontSize="24"/>
-                </StackPanel>
-            </Grid>
-
-            <ListView Grid.Row="1" Margin="10" SelectionMode="None">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Margin="5">
-                            <Image Height="250" Width="200"/>
-                            <TextBlock Text="product name" Margin="10 0" Style="{StaticResource productName}" FontWeight="SemiBold" VerticalAlignment="Center"/>
-                            <StackPanel Orientation="Horizontal" Margin="50 0">
-                                <Button Style="{StaticResource addBtn}">
-                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE738;"/>
-                                </Button>
-                                <TextBlock Text="product count" Style="{StaticResource productName}" VerticalAlignment="Center"/>
-                                <Button Style="{StaticResource addBtn}">
-                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE710;"/>
-                                </Button>
-                            </StackPanel>
-                            <TextBlock Text="price" Margin="50 0" Style="{StaticResource productPrice}" VerticalAlignment="Center" FontSize="20"/>
-                            <Button Content="Удалить из корзины" Grid.Column="1" Style="{StaticResource productBtn}" HorizontalAlignment="Right" Margin="300 0 0 0"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                <ListView.Items>
-                    <x:String>One</x:String>
-                </ListView.Items>
-            </ListView>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Margin="30">
+                <TextBlock Text="ИТОГО:" Style="{StaticResource productName}" FontSize="24"/>
+                <TextBlock Text="{x:Bind cartVM.TotalPrice}" Style="{StaticResource productPrice}" Margin="20 0 5 0"/>
+                <TextBlock Text="рублей" Style="{StaticResource productName}" FontSize="24"/>
+            </StackPanel>
         </Grid>
+
+        <TextBlock Grid.Row="1" Style="{StaticResource productName}" Text="{x:Bind cartVM.Message}" Margin="20" HorizontalAlignment="Center"/>
+
+        <ListView x:Name="productList" Grid.Row="1" Margin="10" SelectionMode="None" ItemsSource="{x:Bind cartVM.products}" x:DefaultBindMode="TwoWay" Height="550" VerticalAlignment="Top">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Height="250" Width="200" Source="{Binding ProductImage}"/>
+                        <TextBlock Text="{Binding ProductName}" Margin="10 0" Style="{StaticResource productName}" FontWeight="SemiBold" VerticalAlignment="Center" Width="300" TextWrapping="WrapWholeWords"/>
+                        <StackPanel Orientation="Horizontal" Margin="50 0">
+                            <Button Style="{StaticResource addBtn}" CommandParameter="{Binding}" Command="{Binding ElementName=productList,Path=DataContext.MinusProductCommand}">
+                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE738;"/>
+                            </Button>
+                            <TextBlock Text="{Binding ProductCount}" Style="{StaticResource productName}" VerticalAlignment="Center"/>
+                            <Button Style="{StaticResource addBtn}" CommandParameter="{Binding}" Command="{Binding ElementName=productList,Path=DataContext.AddProductCommand}">
+                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE710;"/>
+                            </Button>
+                        </StackPanel>
+                        <TextBlock Text="{Binding TotalPrice}" Margin="50 0" Style="{StaticResource productPrice}" VerticalAlignment="Center" FontSize="20"/>
+                        <Button Content="Удалить из корзины" Grid.Column="1" Style="{StaticResource productBtn}" HorizontalAlignment="Right"
+                                     CommandParameter="{Binding}" Command="{Binding ElementName=productList,Path=DataContext.DeleteProductCommand}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>
